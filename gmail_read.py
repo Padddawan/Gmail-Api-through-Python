@@ -102,8 +102,9 @@ for mssg in mssg_list:
 		clean_one = part_data.replace("-","+") # decoding from Base64 to UTF-8
 		clean_one = clean_one.replace("_","/") # decoding from Base64 to UTF-8
 		clean_two = base64.b64decode (bytes(clean_one, 'UTF-8')) # decoding from Base64 to UTF-8
-		soup = BeautifulSoup(clean_two , "lxml" )
-		mssg_body = soup.body()
+		#soup = BeautifulSoup(clean_two , "lxml" )
+		#mssg_body = soup.body()
+		mssg_body = clean_two
 		# mssg_body is a readible form of message body
 		# depending on the end user's requirements, it can be further cleaned 
 		# using regex, beautiful soup, or any other method
