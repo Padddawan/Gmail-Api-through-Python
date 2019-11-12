@@ -30,6 +30,7 @@ import dateutil.parser as parser
 from datetime import datetime
 import datetime
 import csv
+import sys
 
 
 # Creating a storage.JSON file with authentication details
@@ -110,7 +111,7 @@ for mssg in mssg_list:
 		temp_dict['Message_body'] = mssg_body
 
 	except :
-		pass
+		print("Unexpected error:", sys.exc_info()[0])
 
 	print (temp_dict)
 	final_list.append(temp_dict) # This will create a dictonary item in the final list
